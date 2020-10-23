@@ -1,0 +1,40 @@
+<!-- part9 -->
+{% extends 'base.html'%}
+{% block content%}
+<h1>About</h1>
+<p>This is a template</p>
+<!-- part14 -->
+<p>capfirst Filter--{{my_text|capfirst}}</p>
+<p>capfirst Filter with upper Filter-- {{my_text|capfirst|upper}}</p>
+<p>capfirst Filter with title Filter-- {{my_text|capfirst|title}}</p>
+<p>capfirst Filter with lower Filter-- {{my_text|lower}}</p>
+<p>capfirst Filter with direct string-- {{"test string"|capfirst}}</p>
+<p>Raw my_html-- {{my_html}}</p>
+<p>safe filter on my_html-- {{my_html|safe}}</p>
+<p>slugify filter on my_html-- {{my_html|slugify}}</p>
+<p>striptags filter on my_html-- {{my_html|striptags}}</p>
+<!-- part14 -->
+<!-- part11 -->
+{{my_text}}, {{my_number}}
+<!-- part11 -->
+<!-- part12 -->
+<!-- <ul>
+{% for item in my_list%}
+<li>{{item}}</li>
+{% endfor %}
+</ul> -->
+<!-- part12 -->
+<!-- part13 -->
+<ul>
+{% for item in my_list%}
+    {% if item == 312 %}
+        <li>Item{{forloop.counter}}-{{item}}-{{item|add:100}}</li>
+    {% elif item == "Abc" %}
+        <li> Invalid Item </li>
+    {% else %}
+        <li>Item{{forloop.counter}}-{{item}}</li>
+    {%endif%}
+{% endfor %}
+</ul>
+<!-- part13 -->
+{%endblock%}
